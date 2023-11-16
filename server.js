@@ -8,13 +8,13 @@ app.use(cors())
 
 app.use(express.json());
 app.use("/", router);
-app.listen(5000, () => console.log("Server running"));
+app.listen(3000, () => console.log("Server is running on port "));
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "scottishcoder99@gmail.com",
-    pass: "jlkovryyotvpgrhg",
+    user: "jamal@adsomia.com",
+    pass: "tbqlmtqnyxrgsvsz",
   },
 });
 
@@ -32,12 +32,12 @@ router.post("/contact", (req, res) => {
   const message = req.body.message;
   const mail = {
     from: name,
-    to: "scottishcoder99@gmail.com",
+    to: "jamal@adsomia.com",
     subject: "Contact Form Submission",
     html: `
             <p>Name: ${name}</p>
             <p>Email: ${email}</p>
-            <p>MessageP: ${message}</p>
+            <p>Message: ${message}</p>
         `,
   };
   contactEmail.sendMail(mail, (error) => {
