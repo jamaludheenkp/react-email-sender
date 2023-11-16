@@ -23,7 +23,8 @@ const ContactForm = () => {
         alert(result.status);
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", marginTop:"200px",marginLeft:"600px" }}>
+            <h1>contact form</h1>
             <div>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" required/> 
@@ -36,7 +37,7 @@ const ContactForm = () => {
                 <label htmlFor="message">Message:</label>
                 <textarea id="message" required/> 
             </div>
-            <button type="submit">{status}</button>
+            <button style={{width:"300px"}} type="submit">{status}</button>
         </form>
     )
 }
